@@ -1,0 +1,58 @@
+vagrant@ubuntu-focal:~$ cd /home/vagrant/altschool/tests
+vagrant@ubuntu-focal:~/altschool/tests$ cd
+vagrant@ubuntu-focal:~$ cd altschool
+vagrant@ubuntu-focal:~/altschool$ cd tests
+vagrant@ubuntu-focal:~/altschool/tests$ cd ~
+vagrant@ubuntu-focal:~$ echo 'Hello A' > /home/vagrant/altschool/misc/fileA
+vagrant@ubuntu-focal:~$ cat /home/vagrant/altschool/misc/fileA
+Hello A
+vagrant@ubuntu-focal:~$ touch /home/vagrant/altschool/misc/fileB
+vagrant@ubuntu-focal:~$ ls /home/vagrant/altschool/misc
+fileA  fileB  fileC  fileD
+vagrant@ubuntu-focal:~$ cp /home/vagrant/altschool/misc/fileA /home/vagrant/altschool/misc/fileC
+vagrant@ubuntu-focal:~$ mv /home/vagrant/altschool/misc/fileB /home/vagrant/altschool/misc/fileD
+vagrant@ubuntu-focal:~$ tar -cvf /home/vagrant/altschool/misc.tar /home/vagrant/altschool/misc
+tar: Removing leading `/' from member names
+/home/vagrant/altschool/misc/
+/home/vagrant/altschool/misc/fileD
+/home/vagrant/altschool/misc/fileA
+/home/vagrant/altschool/misc/fileC
+vagrant@ubuntu-focal:~$ gzip /home/vagrant/altschool/misc.tar
+gzip: /home/vagrant/altschool/misc.tar.gz already exists; do you wish to overwrite (y or n)? y
+vagrant@ubuntu-focal:~$ sudo adduser toby
+Adding user `toby' ...
+Adding new group `toby' (1004) ...
+Adding new user `toby' (1004) with group `toby' ...
+Creating home directory `/home/toby' ...
+Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for toby
+Enter the new value, or press ENTER for the default
+        Full Name []: Ndubuaku Tobechukwu
+        Room Number []: nil
+        Work Phone []: nil
+        Home Phone []: nil
+        Other []: nil
+Is the information correct? [Y/n] y
+vagrant@ubuntu-focal:~$ sudo passwd -e nwoke
+passwd: password expiry information changed.
+vagrant@ubuntu-focal:~$ ls /home
+nwoke  ubuntu  vagrant
+vagrant@ubuntu-focal:~$ su toby
+Password:
+You are required to change your password immediately (administrator enforced)
+Changing password for nwoke.
+Current password:
+New password:
+Retype new password:
+nwoke@ubuntu-focal:/home/vagrant$ exit
+exit
+vagrant@ubuntu-focal:~$ sudo passwd -l toby
+passwd: password expiry information changed.
+vagrant@ubuntu-focal:~$ sudo useradd -s /sbin/nologin username
+vagrant@ubuntu-focal:~$ sudo nano /etc/ssh/sshd_config
+vagrant@ubuntu-focal:~$
+
+
